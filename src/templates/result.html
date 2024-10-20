@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>いもち病診断アプリ</title>
+    <style>
+        body {
+            font-family: "MS PGothic", sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 50px 0;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        img {
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 18px;
+            text-decoration: none;
+            color: #000;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .red {
+            color: red; /* いもち病の色 */
+        }
+        .blue {
+            color: blue; /* いもち病でない色 */
+        }
+        .yellow-bg {
+            background-color: yellow; /* いもち病の背景色 */
+        }
+        .green-bg {
+            background-color: rgb(87, 255, 26); /* いもち病でない背景色 */
+        }
+    </style>
+</head>
+<body class="
+    {% if rice_blastName == 'いもち病です！' %}
+        yellow-bg
+    {% elif rice_blastName == 'いもち病ではありません！' %}
+        green-bg
+    {% else %}
+        white
+    {% endif %}
+">
+    {% if rice_blastName %}
+        <h1 class="{% if rice_blastName == 'いもち病です！' %}red{% elif rice_blastName == 'いもち病ではありません！' %}blue{% endif %}">
+            これは{{ rice_blastName }}
+        </h1>
+        <div>
+            <img src="{{ image }}" alt="{{ rice_blastName }}の画像">
+        </div>
+    {% endif %}
+    <a href="./">トップへ戻る</a>
+</body>
+</html>

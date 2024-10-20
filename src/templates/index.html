@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>いもち病診断アプリ</title>
+    <style>
+        body {
+            background-color: rgb(87, 255, 26);
+            font-family: "MS PGothic", sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 50px 0;
+        }
+        img {
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        form {
+            margin: 20px 0;
+        }
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            font-size: 18px;
+            padding: 5px 20px;
+            cursor: pointer;
+        }
+        p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- タイトルの上に画像を表示 -->
+    <img src="/static/top_image.jpg" alt="いもち病診断アプリのロゴ">
+    
+    <h1>いもち病診断アプリ～症状写真を撮って、その場で診断～</h1>
+    
+    <form method="post" enctype="multipart/form-data">
+        <p><input type="file" name="filename"></p>
+        <input type="submit" value="診断">
+    </form>
+</body>
+</html>
